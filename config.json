@@ -1,0 +1,9 @@
+{
+    "duration": 60,    
+    "rate": 1,    
+    "pSize": {
+        "type": "normal",
+        "mean": 50,
+        "sd": 5
+    }
+}
