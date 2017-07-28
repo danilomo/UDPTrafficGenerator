@@ -11,6 +11,6 @@ To start the server:
 
 java -jar udpgenerator.jar -server <port number>
 
-To start the client
+To start the client:
 
 java -jar udpgenerator.jar -client -config <json configuration file> -port <server port> -threads <number of threads> -address <server address>
