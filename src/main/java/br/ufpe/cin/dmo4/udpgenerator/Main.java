@@ -1,16 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.ufpe.cin.dmo4.udpgenerator;
 
 import br.ufpe.cin.dmo4.udpgenerator.client.ClientMain;
 import br.ufpe.cin.dmo4.udpgenerator.server.ServerMain;
 
 /**
+ * The main class of this project.
  *
- * @author danilo
+ * It can call the server's or the client's main class, according to the first
+ * command line argument.
+ *
+ * @author Danilo Oliveira
  */
 public class Main {
 
@@ -18,24 +17,32 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-               
-        args = "-client -config config.json -port 7999 -threads 100 -address localhost".split(" ");
 
-        if(args.length <= 1){
-            System.exit(1);
-        }                        
+        args = "-server -port 7999".split(" ");
         
-        if("-server".equals(args[0])){
-            ServerMain.main(new String[]{args[1], args[2]});
-        }else{
-            String[] newargs = new String[args.length - 1];
-            
-            for(int i = 0; i < newargs.length; i++){
-                newargs[i] = args[i+1];
-            }
-            
-            ClientMain.main(newargs);
+        //Examples: 
+        //java -jar udpgenerator.jar -server -port 7999
+        //java -jar udpgenerator.jar -client -config config.json -port 7999 -threads 100 -address localhost
+        if (args.length <= 1) {
+            System.exit(1);
+        }
+
+        if (null == args[0]) {
+            System.err.println("Invalid command line arguments.");
+        } else switch (args[0]) {
+            case "-server":
+                ServerMain.main(new String[]{args[1], args[2]});
+                break;
+            case "-client":
+                String[] newargs = new String[args.length - 1];
+                for (int i = 0; i < newargs.length; i++) {
+                    newargs[i] = args[i + 1];
+                }   ClientMain.main(newargs);
+                break;
+            default:
+                System.err.println("Invalid command line arguments.");
+                break;
         }
     }
-    
+
 }

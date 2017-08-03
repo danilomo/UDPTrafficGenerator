@@ -42,9 +42,7 @@ public class ClientMain {
     public static void main(String[] args) {
 
         try {
-
-            ClientMain rc = initProgram("-config config.json -port 7999 -threads 5 -address localhost".split(" "));
-//            ClientMain rc = initProgram(args);
+            ClientMain rc = initProgram(args);
             rc.startThreads();
 
         } catch (Exception ex) {

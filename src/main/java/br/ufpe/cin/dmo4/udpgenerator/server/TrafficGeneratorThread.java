@@ -53,8 +53,6 @@ public class TrafficGeneratorThread extends Thread {
                 return;
             }
         }
-        
-        System.out.println("MEU FI MORREU!");
     }
 
     private void generateRandomPayload() {

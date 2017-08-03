@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.ufpe.cin.dmo4.udpgenerator.server;
 
 import br.ufpe.cin.dmo4.udpgenerator.distributions.RandomDistribution;
@@ -17,7 +12,7 @@ import org.codehaus.jettison.json.JSONObject;
 
 /**
  *
- * @author danilo
+ * @author Danilo Oliveira
  */
 public class TrafficGeneratorParameters {
     

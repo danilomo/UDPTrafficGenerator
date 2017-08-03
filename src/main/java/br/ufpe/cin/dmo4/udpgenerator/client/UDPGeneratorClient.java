@@ -64,7 +64,7 @@ public class UDPGeneratorClient extends Thread {
                 socket.receive(receiveP);
 
 //                for debugging purposes
-                System.out.println("Received: " + packetToBase64().trim());
+//                System.out.println("Received: " + packetToBase64().trim());
 
             } catch (IOException ex) {
                 Logger.getLogger(UDPGeneratorClient.class.getName()).log(Level.SEVERE, null, ex);
